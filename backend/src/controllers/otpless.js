@@ -14,7 +14,7 @@ exports.login = async (req, res, next) => {
   };
 
   await axios
-    .post("https://technolitics.authlink.me", payload, { headers: headers })
+    .post("https://example.authlink.me", payload, { headers: headers })
     .then((response) => {
       var token = jwt.sign({ id: response.data.user.waNumber }, secret, {
         expiresIn: 86400 * 365,
